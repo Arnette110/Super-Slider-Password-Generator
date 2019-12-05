@@ -1,86 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Password Generator</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous" />
-    </head>
+  <body class="vh-auto">
+    <!-- top bar start -->
+    <div
+      class="container-fluid border-2px col text-center bg-secondary text-white"
+    >
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+    </div>
+    <!-- top bar end -->
 
-    <body>
-        <div class="container-fluid border-2px col text-center bg-secondary text-white">
+    <div class="container-fluid col-sm-10 border">
+      <div class="row">
+        <!-- container for pw criteria start -->
+        <div class="container-fluid border col-sm-6 mx-auto">
+          <h2>Select your password criteria:</h2>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                name="lwrCase"
+                id="lwrCase"
+              />
+              Lowercase Characters
+            </label>
+            <br />
+            <label class="form-check-label">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                name="upCase"
+                id="upCase"
+              />
+              Uppercase Characters
+            </label>
+            <br />
+            <label class="form-check-label">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                name="num"
+                id="num"
+              />
+              Numeric Characters
+            </label>
+            <br />
+            <label class="form-check-label">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                name="spChar"
+                id="spChar"
+              />
+              Special Characters
+            </label>
+            <br />
+          </div>
 
-            <header>
-                <h1>Password Generator</h1>
-            </header>
-        </div>
-
-
-        <div class="container-fluid col-sm-10 border">
-            <div class="row">
-                <div class="container-fluid border col-sm-6 mx-auto">
-                    <h2>Select your password criteria: </h2>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="lwrCase" id="lwrCase">
-                            Lowercase Characters
-                        </label>
-                        <br>
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="upCase" id="upCase">
-                            Uppercase Characters
-                        </label>
-                        <br>
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="num" id="num">
-                            Numeric Characters
-                        </label>
-                        <br>
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="spChar" id="spChar">
-                            Special Characters
-                        </label>
-                        <br>
-                    </div>
-                    <hr>
-                    <input type="range" min="8" max="128" name="slider" id="slider" value="16">
-                    <br>
-                    <div id="length"></div>
-                </div>
-
-
-
-
-                <div class="container-fluid col-sm-6 mx-auto">
-                    <div class="password-content">
-
-                        <h2>Generate a Password:</h2>
-
-                        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password">
-                        </textarea>
-                        <hr>
-                        <button onclick="generate()" id="generate">Generate Password</button>
-                        <button onclick="copyToClipboard()" id="copy">
-                            Copy to Clipboard
-                        </button>
-                        <div id="length"></div>
-                    </div>
-
-                </div>
+          <div class="row pad">
+            <div class="col-sm-6">
+              <input
+                type="range"
+                min="8"
+                max="128"
+                name="slider"
+                id="slider"
+                value="16"
+              />
             </div>
-        </div>
-        </div>
 
-        <!-- Optional JavaScript -->
-        <script src="index.js"></script>
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            <div class="col-sm-6">
+              <div id="length"></div>
+            </div>
+          </div>
+        </div>
+        <!-- container for pw criteria end -->
+
+        <!-- container for pw content, and buttons start -->
+        <div class="container-fluid col-sm-6 mx-auto">
+          <div class="password-content">
+            <h2>Generate a Password:</h2>
+            <!-- textarea for generated password -->
+            <div class="form-group">
+              <label for="password"></label>
+              <textarea
+                readonly
+                class="form-control"
+                name="password"
+                id="password"
+                placeholder="Your Secure Password"
+                aria-label="Generated Password"
+                rows="4"
+              >
+              </textarea>
+            </div>
+
+            <div class="row pad">
+              <div class="col-sm-6">
+                <!-- generate pw button -->
+                <button
+                  type="button"
+                  onclick="generate()"
+                  id="generate"
+                  class="btn btn-secondary"
+                  btn-lg
+                  btn-block
+                  mr-1
+                >
+                  Generate Password
+                </button>
+              </div>
+              <div class="col-sm-6">
+                <!-- copy button -->
+                <button
+                  type="button"
+                  onclick="copyToClipboard()"
+                  id="copy"
+                  class="btn btn-secondary"
+                  btn-lg
+                  btn-block
+                  ml-1
+                >
+                  Copy to Clipboard
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- container for pw content, and buttons end -->
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div
+      class="page-footer font-small border-2px fixed-bottom">
+      <div class="footer-copyright text-center py-3">
+        &copy; 2019 Copyright
+      </div>
+    </div>
+    <!-- footer -->
+
+    <!-- Optional JavaScript -->
+    <script src="index.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -89,6 +173,5 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script> -->
-    </body>
-
+  </body>
 </html>
