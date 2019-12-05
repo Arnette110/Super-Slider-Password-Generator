@@ -10,8 +10,7 @@ document.getElementById("length").innerHTML = "Password Length: 16";
 // function to set #length based on slider position
 document.getElementById("slider").oninput = function() {
   if (document.getElementById("slider").value > 0) {
-    document.getElementById("length").innerHTML =
-      "Password Length: " + document.getElementById("slider").value;
+    document.getElementById("length").innerHTML = " Password Length: " + document.getElementById("slider").value;
   }
 };
 
