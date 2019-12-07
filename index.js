@@ -10,7 +10,8 @@ document.getElementById("length").innerHTML = "Password Length: 16";
 // function to set #length based on slider position
 document.getElementById("slider").oninput = function() {
   if (document.getElementById("slider").value > 0) {
-    document.getElementById("length").innerHTML = " Password Length: " + document.getElementById("slider").value;
+    document.getElementById("length").innerHTML =
+      " Password Length: " + document.getElementById("slider").value;
   }
 };
 
@@ -41,8 +42,7 @@ function generate() {
     }
     if (document.getElementById("spChar").checked) {
       values = values + spChar;
-    };
-
+    }
 
     // create for loop to choose pw characters from selected criteria
     for (var i = 0; i < complexity; i++) {
@@ -56,11 +56,11 @@ function generate() {
     // add pw to textbox
     document.getElementById("password").value = password;
   }
-};
+}
 
-
+// copy pw to clipboard
 function copyToClipboard() {
-  var passwordText = document.querySelector("#password");
+  var passwordText = password;
 
   passwordText.select();
   document.execCommand("copy");
@@ -68,5 +68,4 @@ function copyToClipboard() {
   alert(
     "Your password " + passwordText.value + " was copied to your clipboard."
   );
-};
-
+}
