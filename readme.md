@@ -13,7 +13,8 @@ This password generator allows the user to create a password using lowercase and
 - If you like your password and would like to copy it to the clipboard go ahead and click the button labelled "Copy to clipboard"
 
 ## Screenshot of project
-
+![screenshot-without-copy](https://user-images.githubusercontent.com/54122844/70378563-13f7c500-18df-11ea-9d4b-4a1d6fe5f03d.png)
+![screenshot](https://user-images.githubusercontent.com/54122844/70378564-16f2b580-18df-11ea-9484-bc73ec2560fd.png)
 
 
 ## Built With
