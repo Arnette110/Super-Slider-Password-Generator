@@ -55,6 +55,10 @@ function generate() {
 
     // add pw to textbox
     document.getElementById("password").value = password;
+    
+    // makes copy button visible if password is generated
+    var copyBtn = document.getElementById("copy");
+    copyBtn.style.display = "block";
   }
 }
 
