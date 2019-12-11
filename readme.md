@@ -2,6 +2,9 @@
 
 This password generator allows the user to create a password using lowercase and uppercase letters along with special characters and numbers. The default length is set to 16 characters but can be changed to any length between 8 and 128 characters.
 
+## URL to project
+https://arnette110.github.io/Super-Slider-Password-Generator/
+
 ## Instructions
 
 - Load the index.html in browser.
@@ -12,8 +15,7 @@ This password generator allows the user to create a password using lowercase and
 - If you would like to generate a different password repeat the previous steps. *you do not need to reload the page to change your selection criteria and create a new password.
 - If you like your password and would like to copy it to the clipboard go ahead and click the button labelled "Copy to clipboard"
 
-## URL to project
-https://arnette110.github.io/password-generator/
+
 
 ## Screenshot of project
 ![screenshot-without-copy](https://user-images.githubusercontent.com/54122844/70378563-13f7c500-18df-11ea-9d4b-4a1d6fe5f03d.png)
